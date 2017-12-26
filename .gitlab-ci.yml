@@ -70,11 +70,11 @@ maven-repackage:
     script:
         - ./mvnw package -DskipTests -Dmaven.repo.local=$MAVEN_USER_HOME
     artifacts:
-    expire_in: 1 week
+    
         paths:
             - target/*.war
 
-
+expire_in: 1 week
 
     
 docker-build:
