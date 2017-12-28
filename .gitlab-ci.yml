@@ -84,8 +84,9 @@ docker-build:
         - docker info
         - cp target/*.war src/main/docker
     script:
+    -yum install keytool
     - mkdir -p /etc/docker/certs.d/ds-9101aa230624:8083
-    - $JAVA_HOME/keytool -printcert -sslserver 10.112.78.112:8082  -rfc > /etc/docker/certs.d/ds-9101aa230624:8083/ca.crt
+    - ./keytool -printcert -sslserver 10.112.78.112:8082  -rfc > /etc/docker/certs.d/ds-9101aa230624:8083/ca.crt
     - echo "10.112.78.112  ds-9101aa230624" >> /etc/hosts
 
 
