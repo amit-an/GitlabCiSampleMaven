@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM anapsix/alpine-java:jdk8
 
 ENV JHIPSTER_SLEEP 0
 
