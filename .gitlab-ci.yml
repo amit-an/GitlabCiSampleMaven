@@ -88,8 +88,6 @@ docker-build:
     - cp ca.crt /etc/docker/certs.d/ds-9101aa230624:8083/
     #- $(dirname $(dirname $(readlink -f $(which java))))/bin/keytool -printcert -sslserver 10.112.78.112:8082  -rfc > /etc/docker/certs.d/ds-9101aa230624:8083/ca.crt
     - echo "10.112.78.112  ds-9101aa230624" >> /etc/hosts
-
-
-        - docker login -u "gitlab-ci-token" -p "$CI_BUILD_TOKEN" registry.gitlab.com
-        - docker build -f src/main/docker/Dockerfile -t registry.gitlab.com/amit-an/ci-example-maven src/main/docker
-        - docker push registry.gitlab.com/amit-an/ci-example-maven
+    - docker login -u "gitlab-ci-token" -p "$CI_BUILD_TOKEN" registry.gitlab.com
+    - docker build -f src/main/docker/Dockerfile -t registry.gitlab.com/amit-an/ci-example-maven src/main/docker
+    - docker push registry.gitlab.com/amit-an/ci-example-maven
