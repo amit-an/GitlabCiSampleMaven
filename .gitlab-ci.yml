@@ -34,7 +34,7 @@ gulp-build:
     script:
         - gulp build
 
- maven-test:
+maven-test:
     stage: test
     script:
         - ./mvnw test -Dmaven.repo.local=$MAVEN_USER_HOME
@@ -42,25 +42,25 @@ gulp-build:
          paths:
              - target/surefire-reports/*
 
- gulp-test:
-     stage: test
-     script:
+gulp-test:
+    stage: test
+    script:
          - gulp test
 
- protractor-test:
-     stage: test
-     script:
+protractor-test:
+    stage: test
+    script:
         - gulp protractor
 
-  gatling-test:
-     stage: test
-     allow_failure: true
-     script:
+gatling-test:
+    stage: test
+    allow_failure: true
+    script:
          - ./mvnw gatling:execute -Dmaven.repo.local=$MAVEN_USER_HOME
-     before_script:
+    before_script:
           - npm install
            - export MAVEN_USER_HOME=`pwd`/.maven     - ./mvnw spring-boot:run -Dmaven.repo.local=$MAVEN_USER_HOME &
-   artifacts:
+    artifacts:
        paths:
              - target/gatling/*
 
