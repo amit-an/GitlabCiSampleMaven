@@ -47,10 +47,10 @@ gulp-test:
     script:
          - gulp test
 
-protractor-test:
-    stage: test
-    script:
-        - gulp protractor
+#protractor-test:
+ #   stage: test
+ #   script:
+ #       - gulp protractor
 
 gatling-test:
     stage: test
